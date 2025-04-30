@@ -109,9 +109,9 @@ def etl_dag(
 # 3. Initiate both DAGs
 country_code_dag = etl_dag(
     dag_id="country_code_data",
-    schedule="@daily",
+    schedule="@yearly",
     start=datetime(2025, 4, 6),
-    end=datetime(2025, 4, 15),
+    end=datetime(2026, 4, 15),
     url=COUNTRY_URL,
     download_path="/tmp/country_code.csv",
     gcs_path="data/country_code.csv",
@@ -119,9 +119,9 @@ country_code_dag = etl_dag(
 
 power_plant_dag = etl_dag(
     dag_id="power_plant_data",
-    schedule="@daily",
+    schedule="@yearly",
     start=datetime(2025, 4, 6),
-    end=datetime(2025, 4, 15),
+    end=datetime(2026, 4, 15),
     url=POWER_PLANT_URL,
     download_path="/tmp/global_power_plant.zip",
     unzip_path="/tmp/extracted/",

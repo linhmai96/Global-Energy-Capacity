@@ -37,8 +37,8 @@ default_args = {
 with DAG("transform_and_load",
         default_args=default_args,
         start_date = datetime(2025, 4, 6),
-        end_date = datetime(2025, 4, 15),
-        schedule_interval="@daily",
+        end_date = datetime(2026, 4, 15),
+        schedule_interval="@yearly",
         catchup=True,
         max_active_runs=1,
         tags=["dtc"]
